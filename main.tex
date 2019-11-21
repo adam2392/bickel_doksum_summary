@@ -1,0 +1,77 @@
+\documentclass{article}
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+\usepackage{graphbox}
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+% \usepackage[showframe]{geometry}
+
+\DeclareUnicodeCharacter{00A0}{~}
+
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
+\graphicspath{{./figures/}{./}}
+
+\title{Bickel and Doksum Summary - Volume I}
+
+\author[1,2]{Adam Li}
+
+\affil[1]{Department of Biomedical Engineering, Johns Hopkins University, Baltimore, United States}
+\affil[2]{Institute for Computational Medicine, Johns Hopkins University, Baltimore, United States}
+
+
+\begin{document}
+\maketitle
+\footnotetext[1]{BD is a hard book to read, so here we try to present a summary of the important concepts in outline format. If you feel like there was an error, please submit an Issue and Pull Request.}
+
+\tableofcontents
+\newpage
+
+\listoffigures
+\listoftables
+
+\newpage
+
+\section{Chapter 1: An introduction to important concepts in statistical learning}
+  \label{sec:chapterone}
+  
+
+
+   
+
+\section{Acknowledgements}
+  
+  AL is supported by NIH T32 EB003383, NSF GRFP, Whitaker Fellowship and the Chateaubriand Fellowship. SVS is supported by NIH R21 NS103113, the Coulter Foundation, Maryland Innovation Initiative, US NSF Career Award 1055560 and the Burroughs Wellcome Fund CASI Award 1007274. Computational resources were also provided by the Maryland Advanced Research Computing Center (MARCC). 
+
+\newpage
+\section{Supplementary Material}
+\beginsupplement
+  
+\clearpage
+\newpage
+\bibliographystyle{unsrt}  
+\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
+
+\end{document}
