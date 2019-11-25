@@ -1,12 +1,17 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
+A level-1 auxiliary file: content/chapter_one.aux
+A level-1 auxiliary file: content/chapter_two.aux
+A level-1 auxiliary file: content/chapter_three.aux
+A level-1 auxiliary file: content/chapter_four.aux
+A level-1 auxiliary file: content/chapter_five.aux
 The style file: unsrt.bst
 I found no \citation commands---while reading file main.aux
 Database file #1: references.bib
 You've used 0 entries,
             1791 wiz_defined-function locations,
-            445 strings with 3516 characters,
+            450 strings with 3635 characters,
 and the built_in function-call counts, 18 in all, are:
 = -- 0
 > -- 0

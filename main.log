@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 NOV 2019 11:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 NOV 2019 13:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -509,35 +509,52 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
+\thm@preskip=\skip69
+\thm@postskip=\skip70
+\thm@headsep=\skip71
+\dth@everypar=\toks30
+)
+\c@definition=\count116
+
 (/usr/local/texlive/2015/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box29
 \UL@hyphenbox=\box30
-\UL@skip=\skip69
-\UL@hook=\toks25
+\UL@skip=\skip72
+\UL@hook=\toks31
 \UL@height=\dimen143
-\UL@pe=\count116
+\UL@pe=\count117
 \UL@pixel=\dimen144
 \ULC@box=\box31
 Package: ulem 2012/05/18
 \ULdepth=\dimen145
 )
    defining Unicode char U+00A0 (decimal 160)
- (./main.aux)
+ (./main.aux
+(./content/chapter_one.aux) (./content/chapter_two.aux)
+(./content/chapter_three.aux) (./content/chapter_four.aux)
+(./content/chapter_five.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 54.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -608,7 +625,7 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 46.
+LaTeX Info: Redefining \microtypecontext on input line 54.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -623,17 +640,17 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
+\scratchcounter=\count118
 \scratchdimen=\dimen146
 \scratchbox=\box32
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count120
+\nofMPsegments=\count119
+\nofMParguments=\count120
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count121
 \MPscratchDim=\dimen147
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks27
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
+\everyMPtoPDFconversion=\toks33
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -681,13 +698,13 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 47.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 55.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -695,7 +712,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -704,16 +721,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 50.
- (./main.toc)
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 58.
+ (./main.toc [1
+
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [1
 
-
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./main.lof)
+[2] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
@@ -721,14 +738,18 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
- [2] [3]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 131.
+ [3] [4]
+\openout2 = `content/chapter_one.aux'.
+
+ (./content/chapter_one.tex [5
+
+]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 59.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 137.
-
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 65.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -737,40 +758,81 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [4] [5] [6]
-(./main.bbl
+
+Underfull \hbox (badness 7486) in paragraph at lines 69--71
+[]\T1/ptm/m/n/10 (+20) Good note-book: - $\T1/cmtt/m/n/10 https : / / hasthika 
+. github . io / STT3850 / Lecture % 20Notes / Ch-[]3 _ Notes _ students .
+ []
+
+[6]) [7]
+\openout2 = `content/chapter_two.aux'.
+
+ (./content/chapter_two.tex
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
+ [8
+
+
+]) [9]
+\openout2 = `content/chapter_three.aux'.
+
+ (./content/chapter_three.tex)
+[10
+
+
+]
+\openout2 = `content/chapter_four.aux'.
+
+ (./content/chapter_four.tex) [11
+
+
+]
+\openout2 = `content/chapter_five.aux'.
+
+ (./content/chapter_five.tex) [12
+
+
+]
+[13
+
+] [14] (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [7
+) [15
 
-] (./main.aux) ) 
+] (./main.aux (./content/chapter_one.aux) (./content/chapter_two.aux)
+(./content/chapter_three.aux) (./content/chapter_four.aux)
+(./content/chapter_five.aux)) ) 
 Here is how much of TeX's memory you used:
- 7090 strings out of 493089
- 105608 string characters out of 6134842
- 308788 words of memory out of 5000000
- 10333 multiletter control sequences out of 15000+600000
- 44180 words of font info for 102 fonts, out of 8000000 for 9000
+ 7261 strings out of 493089
+ 108011 string characters out of 6134842
+ 313026 words of memory out of 5000000
+ 10418 multiletter control sequences out of 15000+600000
+ 51792 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,45p,446b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm
+ 38i,12n,45p,599b,257s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm
 -super-t1.enc} </Users/adam2392/Library/texlive/2015/texmf-var/fonts/pk/ljfour/
-public/bbm/bbm10.600pk>{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base
-/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex
-10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
-0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
-b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (7 pages, 144490 bytes).
+public/bbm/bbm10.600pk></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sft
+t1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (15 pages, 185767 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 20481 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 25089 words of extra memory for PDF output out of 29859 (max. 10000000)
 

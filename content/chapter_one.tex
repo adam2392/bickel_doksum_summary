@@ -1,0 +1,112 @@
+
+\section{Chapter 1: An introduction to important concepts in statistical learning}
+  \label{sec:chapterone}
+  \subsection{Important Concepts and Definitions}
+  	\begin{enumerate}
+  		\item Regularity: This means that the stochastic process $\epsilon_n(x) = \sqrt{n} (\hat{F}(x) - F(x)), x \in \mathbb{R}$ converges to a Gaussian process $W^0(F(.))$, which is a Brownian bridge with mean 0 and covariance structure depending on F(.). 
+  		\item Bias of an estimator: This is the difference in expectation of your estimator to the true parameter value in the population model.
+  		\item Variance: This is the variance in your estimator.
+  		\item MLE: maximum likelihood estimator is an estimator that maximizes a likelihood function
+  		\item Estimator: A function that takes a sample of data (i.e. instance of a random variable) and produces a value in $\Theta$, your parameter space of interest.
+  		\item Loss function: A function that takes your estimated parameter, $\hat{\theta}$ and true parameter, $\theta$, and produces a number in $\mathbb{R}_+$ (i.e. loss is non-negative).
+  		\item Risk functional: A functional that takes your loss function, and produces a "risk" of your estimator. The risk would be the expectated value of your loss function under the true model. $E_P [ l(\hat{\theta}, \theta) ]$. If loss is squared error, then risk functional is commonly known as mean-squared error. 
+  		\item admissability: There are infinitely many possible estimators for any problem. However, you want to have a principled way of choosing an estimator if you have multiple proposed estimators. Let us say f, and g are proposed estimators for true value $\theta$. Then an estimator g is inadmissable if $E_\theta [ l(g, \theta) ] \le E_\theta [ l(f, \theta) ] \ \forall \theta \in \Theta$. That is, for every possible value of the parameter, if g's risk is greater then another estimator, then you should never use g as an estimator for $\theta$.
+  	\end{enumerate}
+  	% F(.) = P[X \le .]
+
+	\subsection{Goodness of Fit and Brownian Bridge:}
+	  	Problem statement (v1, easy): If we are given a Gaussian distribution, $H: F(.) = \Phi(\frac{-\mu}{\sigma})$ for some $\mu, \sigma$, then a goodness-of-fit statistic can be:
+
+	  	$$sup_x | \hat{G}(x) - \Phi(x) |$$
+
+	  	$\hat{G}$ is the empirical distribution of $(Z_1, ..., Z_n)$, where each $Z_i = (X_i - \bar{X})/\hat{\sigma}$ is the z-normalized sample point. This G has a null distribution not depending on $\mu$, or $\sigma$ as a result because it's null is N(0,1). This corresponds to our Z-distribution that we know and love. We compare this to a more general problem.
+
+	  	Problem statement (v2, hard): If we are given a parametric model distribution, $H: X ~ P \in \mathbb{F} = \{P_\theta : \theta \in \Theta \}$ is regular, then this problem is very difficult. 
+
+	\subsection{Minimum Distance Estimation}
+		A minimum distance estimate $\theta(\hat{P})$ is the solution to:
+
+		$$\theta(P) = argmin\{ d(P, P_\theta) : \theta \in \Theta \}$$
+
+		where $\hat{P}$, the empirical distribution is substituted for P, and d is some metric defined on the space of probability distributions for X. (i.e. positivity, homogeneity and triangle inequality). 
+
+		If space X is $\mathbb{R}$, then metrics can act on the Euclidean space. The question of interest is if we can linearized, and generalized to show asymptotic Gaussianness? 
+
+	\subsection{Convergence}
+
+		There is convergence in the sense of achieving a supremum, or infimum in real analysis. There is also rates of convergence, where the limit happens at a function of a variable.
+
+		Def: $\theta(\hat{P})$ convergest to $\theta(P)$ at a rate $\delta_n$ if and only if for all $\epsilon > 0$, there exists a $c < \infty$ such that $sup\{P [ |\theta(\hat{P}) - \theta(P)| \ge c \delta_n ] : P \in M_0 \} \le \epsilon$.
+
+	\subsection{Permutation Testing}
+
+		Problem statement: If we are given two samples of data iid: $S_X = \{X_1,...,X_n\}$ and $S_Y = \{Y_1,...,Y_m\}$. We can call one the control, and one the treatment from distributions F and G, respectively. 
+
+		General summary: 
+		A permutation test (i.e. randomization test) is a type of statistical significance test, where the distribution of the \textbf{test statistic} under the null hypothesis is obtained by calculating all possible empirical values of the test statistic under rearrangements of the labels on observed data points. (i.e. swap $X_i$, or $Y_j$ into the opposite sets, $S_X$, or $S_Y$.)
+
+		\subsubsection{Fisher's Permutation Test Summary:}
+
+			$$H_0 : F = G$$
+			$$H_A : F \neq G$$
+
+			We define $g = (g_1, ..., g_n, g_{n+1}, ... g_{n+m})$ is a vector of binary labels assigning each of the observations $X_i,Y_j$ to their original conditions; this changes depending on what we observe obviously. 
+
+			There are $\binom{(n+m)}{n}$ possible g vectors in general. If $H_0$ is true, then all these can occur with equal probability. Now, let $g^*$ be the vector of labels that we get from our data sample $(S_X, S_Y)$, $\theta(X)$ be a proposed test statistic, and $\hat{\theta}^* = \hat{\theta}(g^*)$ be the test statistic based on the a specific instance of labeling, $g^*$.
+
+			Our permutation test:
+
+			$$P_{perm} [ \hat{\theta}^* \ge \hat{\theta}] = \frac{\mathbbm{1} \{\hat{\theta}^* \ge \hat{\theta} \}}{\binom{n+m}{n}}$$
+
+			Just the number of instances your permuted distribution of test statistics are less than your observed test statistic divided by the total number of possibilities. This is not feasible if the total number of possibilities is large, so instead, we approximate this by choosing \textbf{B times} without replacement from the total set of all possible combinations. We then evaluate, and compute $\hat{P}_{perm}$
+
+		\subsubsection{Choosing B (number of permutations to do):}
+
+		\url{https://www.tau.ac.il/~saharon/StatisticsSeminar_files/Permutation%20Tests_final.pdf}
+
+
+
+		Good notebook: 
+		- \url{https://hasthika.github.io/STT3850/Lecture%20Notes/Ch-3_Notes_students.htmlhttps://www.tau.ac.il/~saharon/StatisticsSeminar_files/Permutation%20Tests_final.pdf}
+
+	\subsection{Irregular Parameters}
+
+		TODO:\\
+		1. An explanation of the regular model vs irregular model issue.\\
+		2. Explain why histogram estimate versus parameter estimation in the parametric model setting.
+
+		\textbf{Problem illustration}\\
+		Consider histogram estimate of a one-dimensional density p(.). That is:
+
+		$$\hat{p}(t) = \hat{P}[\mathbbm{1}_j(t)] / h$$
+
+		where $\mathbbm{1}_j = (jh, (j+1)h)$, is the interval that contains data samples t. It is also the unique interval, and h is the size of the interval. This is a \textbf{plug-in estimate} for the parameter $p_h(t) = P[\mathbbm{1}_j(t)] / h$, which is the true population density for some bin sizes h. Note that the only change occurred in the probability model $\hat{P}$ to P. One is the estimate, one is the truth. 
+
+		$\hat{p} \neq p$ for h > 0, but if we take $h = lim_{n->\infty} h_n = 0$, then $\hat{p} \rightarrow p \ \forall t$. That is, as the size of the intervals (i.e. bins) approaches 0, then the plug-in estimate approaches the true density. Essentially, we get a few properties asymptotically for the "bias" and "variance" of the plug-in estimator:
+
+		$$E_P [ \hat{p}_h(t) - p_h(t)] = 0$$
+		$$Var_P [\hat{p}_h(t)] = (p_h(t) - p_h(t) h p_h(t)) / hn$$
+
+		The bias of the h parameter (i.e bin size) is given by:
+
+		$$Bias(h) = \frac{1}{h} \int_{jh}^{(j+1)h} (p(s) - p(t)) ds$$
+
+		is the integral form of the expectation, and goes to 0 when h -> 0. On the other hand, the variance by limit analysis of h and n, only goes to 0 if h goes to 0 slower then n goes to $\infty$. So there is a balance here between having h go to 0 as fast as possible (lowers the bias), versus having it go slower then the rate of n (lowers variance). This is essentially a view of the bias-variance tradeoff that is common in statistical methods.
+
+	\subsection{Stein Estimation}
+
+		Here, BD considers a very specific example of the analysis of variances in a p-sample Gaussian model.
+
+		$X = \{X_{ij} : 1 \le i \le n, 1 \le j \le p\}$, with $X_{ij}$ independent samples distributed from $N(\mu_j, \sigma_0^2)$ parametric model. Note that j is the index for which normal distribution mean we use, and i is the sample index. $\sigma_0^2$, the population variances are assumed equal and \textit{known} with $\mu_p = (\mu_1, ..., \mu_p)$ unknown. Then $X ~ P(n,p)$ for this class of distributions. The MLE of $\mu_p$ is:
+
+			$$\bar{X}_p = (X_{.1}, ..., X_{.p})$$
+
+		which is the sample mean for each group of samples. $X_{.j} = \frac{1}{n} \sum_{i=1}^n X_{ij}$. 
+		
+	\subsection{Empirical Bayes Estimation}
+
+		TODO
+
+	\subsection{Model Selection}
+  		
+  		TODO

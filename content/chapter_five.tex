@@ -1,0 +1,20 @@
+\section{Chapter 5: Asymptotic Approximations}
+  \label{sec:chapterfive}
+  	Analytical forms of the risk function is rare, and computation may involve high dimensional integration.
+
+  	Either: 
+
+  	\begin{enumerate}
+  		\item Approximate risk function $R_n(F) = E_F [ l(F, \delta(X_1, .., X_n)) ]$ with easier to compute and simpler function $\tilde{R}_n(F)$.
+  		\item Use Monte Carlo method to draw independent samples from F using a rng, and an explicit function F. Then approximate the risk function using the empirical risk function. By LLN, if we draw more and more samples, the empirical risk function converges in probability to the true risk function.
+  	\end{enumerate}
+
+  	\subsection{Examples:}
+
+  		\subsubsection{Example 1: Risk of the Median}
+	  		Given $X_1, ..., X_n$ ~ iid F, then we are interested in finding the population median, $\nu(F)$ with estimator: $\hat{\nu} = median(X_1, ..., X_n)$. The risk function for squared error loss is:
+
+	  		$$MSE_F(\hat{\nu}) = \int_{-\infty}^{\infty} ( x - F^{-1}(1/2))^2 g_n(x) dx$$
+
+	  		where F is the CDF. $F^{-1}(1/2)$
+   	

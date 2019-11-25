@@ -1,18 +1,29 @@
-\contentsline {section}{\numberline {1}Useful Notation Reminders}{3}
-\contentsline {section}{\numberline {2}Chapter 1: An introduction to important concepts in statistical learning}{3}
-\contentsline {subsection}{\numberline {2.1}Important Concepts and Definitions}{3}
-\contentsline {subsection}{\numberline {2.2}Goodness of Fit and Brownian Bridge:}{3}
-\contentsline {subsection}{\numberline {2.3}Minimum Distance Estimation}{3}
-\contentsline {subsection}{\numberline {2.4}Convergence}{3}
-\contentsline {subsection}{\numberline {2.5}Permutation Testing}{4}
-\contentsline {subsubsection}{\numberline {2.5.1}Fisher's Permutation Test Summary:}{4}
-\contentsline {subsubsection}{\numberline {2.5.2}Choosing B (number of permutations to do):}{4}
-\contentsline {subsection}{\numberline {2.6}Irregular Parameters}{4}
-\contentsline {subsection}{\numberline {2.7}Stein Estimation}{4}
-\contentsline {subsection}{\numberline {2.8}Empirical Bayes Estimation}{4}
-\contentsline {subsection}{\numberline {2.9}Model Selection}{4}
-\contentsline {section}{\numberline {3}Chapter 5: Asymptotic Approximations}{4}
-\contentsline {subsection}{\numberline {3.1}Examples:}{5}
-\contentsline {subsubsection}{\numberline {3.1.1}Example 1: Risk of the Median}{5}
-\contentsline {section}{\numberline {4}Acknowledgements}{5}
-\contentsline {section}{\numberline {5}Supplementary Material}{6}
+\contentsline {section}{\numberline {1}Useful Notation Reminders}{4}
+\contentsline {section}{\numberline {2}Chapter 1: An introduction to important concepts in statistical learning}{5}
+\contentsline {subsection}{\numberline {2.1}Important Concepts and Definitions}{5}
+\contentsline {subsection}{\numberline {2.2}Goodness of Fit and Brownian Bridge:}{5}
+\contentsline {subsection}{\numberline {2.3}Minimum Distance Estimation}{5}
+\contentsline {subsection}{\numberline {2.4}Convergence}{5}
+\contentsline {subsection}{\numberline {2.5}Permutation Testing}{6}
+\contentsline {subsubsection}{\numberline {2.5.1}Fisher's Permutation Test Summary:}{6}
+\contentsline {subsubsection}{\numberline {2.5.2}Choosing B (number of permutations to do):}{6}
+\contentsline {subsection}{\numberline {2.6}Irregular Parameters}{6}
+\contentsline {subsection}{\numberline {2.7}Stein Estimation}{7}
+\contentsline {subsection}{\numberline {2.8}Empirical Bayes Estimation}{7}
+\contentsline {subsection}{\numberline {2.9}Model Selection}{7}
+\contentsline {section}{\numberline {3}Chapter 2: Methods of Estimation}{8}
+\contentsline {subsection}{\numberline {3.1}Heuristics in Estimations}{8}
+\contentsline {subsubsection}{\numberline {3.1.1}Examples}{8}
+\contentsline {subsection}{\numberline {3.2}Plug-in and Extension Principle}{9}
+\contentsline {subsubsection}{\numberline {3.2.1}Plug-in Principle}{9}
+\contentsline {subsubsection}{\numberline {3.2.2}Extension Principle}{9}
+\contentsline {subsubsection}{\numberline {3.2.3}Examples of Plug-in and Extensions}{9}
+\contentsline {subsection}{\numberline {3.3}Minimum Contrast Estimates}{9}
+\contentsline {subsection}{\numberline {3.4}Maximum Likelihood in Exponential Families}{9}
+\contentsline {section}{\numberline {4}Chapter 3: Measure of Performance and "Notions" of Optimality in Estimation Procedures}{10}
+\contentsline {section}{\numberline {5}Chapter 4: Hypothesis Testing and Confidence Regions}{11}
+\contentsline {section}{\numberline {6}Chapter 5: Asymptotic Approximations}{12}
+\contentsline {subsection}{\numberline {6.1}Examples:}{12}
+\contentsline {subsubsection}{\numberline {6.1.1}Example 1: Risk of the Median}{12}
+\contentsline {section}{\numberline {7}Acknowledgements}{13}
+\contentsline {section}{\numberline {8}Supplementary Material}{14}

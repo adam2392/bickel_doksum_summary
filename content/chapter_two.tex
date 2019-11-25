@@ -1,0 +1,95 @@
+\section{Chapter 2: Methods of Estimation}
+	
+	In general, there is a random variable of interest $X ~ P \in \mathbb{P} = \{P_\theta : \theta \in \Theta \}$. Now, we want to estimate $\theta$ in some reasonable manner with functions $\hat{\theta}$ based on the vector of observations, X. Our goal is to make this estimator somehow close to the true $\theta$. 
+
+	\subsection{Heuristics in Estimations}
+		% \theoremstyle{definition}
+		\begin{definition}{Contrast Function}
+		$\rho : X \times \Theta \rightarrow \mathbb{R}$ is a function that takes the random variable distribution and the parameter space to a real number. This is known as the contrast function.
+		\end{definition}
+
+		and a discrepancy function based on the population is defined as:
+
+		\begin{definition}{Population Discrepancy}
+		$D(\theta_0, \theta) = E_{\theta_0} [ \rho (X, \theta) ]$ is the expected value of the contrast based on the true value $\theta_0$. $\theta_0$ is the unique minimizer of D. 
+		\end{definition}
+
+		If, $P_{\theta_0}$ were the true model, and we knew $D(\theta_0, \theta)$, then we could obtain $\theta_0$ as the minimizer. However, since we do not know D, we instead try to minimize $\rho(X, \theta)$, which would be $\hat{\theta}(X)$ to estimate $\theta_0$. 
+
+		\begin{definition}{Minimum Contrast Estimate}
+		$p(., .)$ is a contrast function and $\hat{\theta}(X)$ is a minimum contrast estimate of the true $\theta_0$.
+		\end{definition}
+
+		\textbf{Euclidean Space}\\
+		When we are operating in finite Euclidean space, the true $\theta_0$ is an interior point of our parameter space and the discrepancy function is smooth, then we would expect that the gradient of our discrepancy is equal to 0 when evaluated at the minimum, $\theta = \theta_0$.
+
+			$$\nabla_\theta D(\theta_0, \theta) |_{\theta=\theta_0} = 0$$
+
+		So, as we did earlier, we do not know D, so we use a plug-in of it with $\rho(X, \theta)$ instead. So we are interested in solving equations of the form:
+
+			$$\nabla_\theta \rho(X, \theta) = 0$$
+
+		which is known as a form of \textit{\textbf{estimating equation}}.
+
+		\textbf{In more generality than Euclidean space}\\	
+		Now, say we are given a general function of the form:
+
+		$$\Psi : X \times \mathbb{R}^d \rightarrow \mathbb{R}^d$$
+
+		and 
+
+		$$V(\theta_0, \theta) = E_{\theta_0} \Psi(X, \theta)$$
+
+		If V = 0 has $\theta=\theta_0$ as its unique solution for all $\theta_0 \in \Theta$, then we say $\hat{\theta}$ solving the equation $\Psi(X, \hat{\theta}) = 0$ is an estimating equation estimate. Note here that $\theta$ is our variable, and $\theta_0$ is some fixed parameter that is the "truth".
+
+		\subsubsection{Examples}
+			Minimum contrast estimates are very abstract at first glance, so it is worthwhile to look at some examples you may already be familiar with to put in the context of minimum contrast estimators.
+
+			\subsubsubsection{\textbf{Least Squares Estimation}}
+
+				If we have $\mu(z) = g(\beta, z), \beta \in \mathbb{R}^d$, with g known. The data $X = \{(z_i, Y_i) : 1 \le i \le n\}$, where $Y_1, ..., Y_n$ are independent labels. There are many choices for how we can frame this as minimum contrast, but here we define the following:
+
+				The \textbf{contrast function} $\rho(X, \beta)$ is squared Euclidean distance between vector Y and the vector expectation of Y, $\mu(z) = (g(\beta, z_1), ..., g(\beta, z_n))$. Specifically it looks like:
+
+					$$\rho(X, \beta) = |Y - \mu|^2 = \sum_{i=1}^n [ Y_i - g(\beta, z_i)]^2$$
+
+				The discrepancy function is:
+
+					$$D(\beta_0, \beta) = E_{\beta_0} \rho(X, \beta) = n \sigma_0^2 + \sum_{i=1}^n [ g(\beta_0, z_i) - g(\beta, z_i)]^2$$
+
+				this is minimized when $\beta = \beta_0$ and is unique minmizer \textbf{if and only if} the parametrization is identifiable. 
+
+				The contrast function is minimized here:
+
+				An estimate $\hat{\beta}$ that minimizes $\rho(X, \beta$ exists if $g(\beta, z)$ is continuous in $\beta$ and that $lim\{|g(\beta, z)| : |\beta| \rightarrow \infty \} = \infty$.
+
+				\textbf{With differentiable functions}
+				If $g(\beta, z)$ is differentiable in $\beta$, then $\hat{\beta}$ satisfies: $\nabla_\theta \rho(X, \theta) = 0$. Then it makes the system of estimating equations:
+
+					$$\sum_{i=1}^n \frac{\partial g}{\partial \beta_j} (\hat{\beta}, z_i) Y_i = \sum_{i=1}^n \frac{\partial g}{\partial \beta_j} (\hat{\beta}, z_i) g(\hat{\beta, z_i})$$
+
+				with $1 \le j \le d$. If g is linear, it is a summation of $z_{ij}$ multiplied by their slopes, $\beta_j$. These can be used to derive the normal equations, which can be wrriten in matrix form to solve least-squares. Least squares in this sense, are just a specific instance of minimum contrast.
+
+			\subsubsubsection{\textbf{Method of Moments (MOM)}}
+				TODO
+
+	\subsection{Plug-in and Extension Principle}
+		In the case of iid situation, there are two principled heuristics that can be used to estimate parameters. One is the plug-in principle, and the next one is the extension principle.
+
+		\subsubsection{Plug-in Principle}
+
+			This is just an abstract way of saying we plug in the empirical distribution we see into our estimator, as a "plug-in" estimate for our parameter. This is justified via the law of large numbers.
+
+		\subsubsection{Extension Principle}
+
+			This is just an abstract way of saying that when we have an estimator, $\nu$ on a submodel of our proposed probability model, then a new estimator, $\bar{\nu}$ on the full model of our proposed proability model is an extension of $\nu$. It must have the property that $\bar{\nu}(P) = \nu(P)$ on the submodel. 
+
+		\subsubsection{Examples of Plug-in and Extensions}
+			\textbf{Example - Frequency Plug-In and Extension}
+
+			\textbf{Hardy Weinberge}
+			TODO
+
+	\subsection{Minimum Contrast Estimates}
+
+	\subsection{Maximum Likelihood in Exponential Families}
