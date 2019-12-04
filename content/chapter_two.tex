@@ -71,7 +71,22 @@
 				with $1 \le j \le d$. If g is linear, it is a summation of $z_{ij}$ multiplied by their slopes, $\beta_j$. These can be used to derive the normal equations, which can be wrriten in matrix form to solve least-squares. Least squares in this sense, are just a specific instance of minimum contrast.
 
 			\subsubsubsection{\textbf{Method of Moments (MOM)}}
-				TODO
+				MOM estimates are equations that \textbf{estimate} say, d moments of the population with their corresponding sample estimates. So we \textbf{assume the existence} of the following d population moments:
+
+				$$\mu_j(\theta) = \mu_j = E_\theta [ X^j ], 1 \le j \le d$$
+
+				The sample moments are:
+
+				$$\hat{\mu}_j = \frac{1}{n} \sum_{i=1}^n X_i^j, 1 \le j \le d$$
+
+				The next step is to express our parameter of interest, $\theta$, as a continuous function of the first d moments. So if we assume that the mapping of $\theta \rightarrow (\mu_1(\theta), ..., \mu_d(\theta))$ is 1-1, then we can estimate $\theta$ by the d equations:
+
+				$$\hat{\mu}_j = \mu_j(\hat{\theta}), 1 \le j \le d$$
+
+				That is, we express the parameters as a function of the population moments, and then use the plug-in principle by \textbf{plugging in} the sample moments instead. This then gives us the MOM estimate of the parameters. Note that the MOM estimate is not unique.
+
+				\textbf{Solving MOM Equations}\\
+				In the MOM framework, someone usually sets up d moment equations, with possibly nonlinearities. Then to find a solution is equivalent to finding a root of the optimization equation, which we can use any number of zero-finding algorithms including but not limited to: Line Search, Trust-Region, or Newton-Raphson algorithms.
 
 	\subsection{Plug-in and Extension Principle}
 		In the case of iid situation, there are two principled heuristics that can be used to estimate parameters. One is the plug-in principle, and the next one is the extension principle.
@@ -87,9 +102,93 @@
 		\subsubsection{Examples of Plug-in and Extensions}
 			\textbf{Example - Frequency Plug-In and Extension}
 
-			\textbf{Hardy Weinberge}
+			\textbf{Hardy Weinberg}
 			TODO
 
 	\subsection{Minimum Contrast Estimates}
+		Maximum likelihood only \textbf{makes sense in regular parametric models}. The likelihood function of $\theta$ is $L_x(\theta)$, which is just the density as a function of $\theta$ for fixed x, samples. The method of MLE is to find an estimate $\hat{\theta}(x)$ that is "most likely" under the likelihood function to have produced the data x. 
+
+		$$L_x(\hat{\theta}(x)) = p(x, \hat{\theta}(x)) = max\{L_x(\theta) : \theta \in \Theta\}$$
+
+		In the context of Bayes estimation, the MLE is the mode of the posterior distribution if $\Theta$ is finite and the prior is a uniform distribution.
+
+		\subsubsection{MLE as Minimum Contrast Estimates from the Kullback-Leibler Divergence}
+
+			If we consider the likelihood function: $L_x(\theta)$, and we take its logarithm: $l_x(\theta) = log L_x(\theta)$, then if the MLE exists, then it will minimize $-l_x(\theta)$ because the negative log is a strictly decreasing function. Now, if we \textbf{assume} that the samples are independent with some density function $f(x, \theta)$, then the log-likelihood function looks like:
+
+			$$l_X(\theta) = log \prod_{i=1}^n f(X_i, \theta) = \sum_{i=1}^n log( f(X_i, \theta) )$$
+
+			This now, is a random variable that is the sum of independent random variables.
+
+			\textbf{MLE as an Information Quantity}\\
+			Note that, if we define a contrast function, $\rho(x, \theta) = -l_x(\theta)$ and $\hat{\theta}$ as a minimum contrast estimate, then our discrepancy function is:
+
+			$$D(\theta_0, \theta) = - E_{\theta_0} [ log(p(X, \theta)) ]$$
+
+			where D is uniquely minimized when $P_\theta = P_{\theta_0}$, which is equivalent to:
+
+			\begin{align}
+				D(\theta_0, \theta) - D(\theta_0, \theta_0) = - (E_{\theta_0}[ log(p(X, \theta))] - E_{\theta_0}[ log(p(X, \theta_0))] )\\
+					= -E_{\theta_0} [ log \frac{p(X, \theta)}{p(X, \theta)} ] > 0 \\
+			\end{align}
+
+			In information theory, $D(\theta_0, \theta_0)$ is the entropy of X, which can also be seen as the smallest value that D can take. Thus, $D(\theta_0, \theta) - D(\theta_0, \theta_0)$ is equivalent to the Kullback-Leibler (KL) information divergence between the densities $p_\theta, p_{\theta_0}$. We can replace the expectation with a summation when X is discrete, or integrals when X is continuous. From information theory, we also know that KL divergence is always $\ge 0$ and is equal to 0, only when $P_1(x) = P_0(x)$. 
+
+			\textbf{Summary:}\\
+			Since MLE was shown to be a minimum contrast estimate, and the contrast function defined above satisfies the condition of being a contrast function, then we can use the extension principle, and show that the MLE is in fact minimizing the KL divergence between the empirical probability $\hat{P}$ and the model probability $P_\theta$.
+
+		\subsubsection{MLE as Estimating Equations (i.e. Method of Moments)}
+			If $\Theta$ is open (a solution cannot be on the boundary) and $l_X(\theta)$ is diffierentiable, and $\hat{\theta}$ exists, then the estimating equation:
+
+			$$\nabla_\theta l_X(\theta) = 0$$
+
+			solves for $\hat{\theta}$. 
 
 	\subsection{Maximum Likelihood in Exponential Families}
+		We know that MLE does not always exist, nor is it unique. However, in a very special class of models, they always exist and are unique. The canonical exponential families have unique maximum likelihood estimates. This section's main theorem is Theorem 2.3.1, which shows the existence of uniqueness of the MLE. I restate it here for brevity.
+
+		\begin{theorem}[Existence and Uniquenee of MLE in Canonical Exponential Families and Relation to Log-Partition Function]
+			\label{thm:ef_exist_unique}
+
+			Suppose $\mathbb{F}$ is the canonical exponential family, with T as the sufficient statistic, h as the base measure, $\mathbb{E}$ as the natural parameter space, and $\nu$ as the natural parameter. If the following conditions hold:
+			
+			\begin{enumerate}
+				\item $\mathbb{E}$ is open
+				\item $\mathbb{F}$ is rank k
+				\item If $t_0 = T(x) \in \mathbb{R}^k$ satsifies the equation: $P [ c^T T(X) > c^T t_0 ] > 0, \forall c \neq 0$
+			\end{enumerate}
+
+			then the MLE, $\hat{\nu}$ exists, and is unique, and it is a solution to the equation:
+
+			$\dot{A}(\nu) = E_\nu [ T(X) ] = t_0$
+
+			If $t_0 = T(x)$ does not satisfy the equation: $P [ c^T T(X) > c^T t_0 ] > 0$, then the MLE does not exist, and $\dot{A}(\nu) = E_\nu [ T(X) ] = t_0$ has no solution.
+		\end{theorem}
+
+		Here, I comment on various properties of the theorem and why they are important:
+
+		\begin{enumerate}
+			\item $\mathbb{E}$ must be open in order for the parameter set to not include boundary points. We saw that at the boundary, irregularities can occur when performing maximum likelihood estimation.
+			\item the exponential family model needs to be of rank k, because that is the dimension of the sufficient statistic. If it was of lesser rank, then T would not be a sufficient statistic
+			\item This last condition is necessary because when the math is worked out, this condition is necessary to prove the theorem
+		\end{enumerate}
+
+	\subsection{Making sense of Plug-in estimates, Minimum Contrast estimates and Maximum Likelihood estimate}
+		
+		Here, when we reviewed plug-in principles using the simple empirical distribution statistics, it is important to remember that it is simply a \textbf{heuristical} procedure, which are i) easy to compute and ii) generally lead to good first estimation procedures. 
+
+		The same is true for method of moments, where we can write down the estimating equations for "d" moments of the population. Note, that here we also do a "plug-in", where we substitute instead of the population moment, the sample moments, in order to actually be able to estimate anything.
+
+		When we consider the general framework of minimum contrast estimates, then we see that many "well-known" things fall under this framework: least-squares estimators (minimizing the contrast function mean-squared error), maximum likelihood estimators (minimizing the contrast function related to entropy and KL divergence).
+
+		MLE seems like a good first approach and it IS for canonical exponential families because Thm. \ref{thm:ef_exist_unique} shows that MLEs exist and are unique for canonical exponential families with certain regularity conditions. In \textbf{addition}, the theorem shows an important relationship with the log-partition function A(.). Remember that in the general sense, the A(.) is a normalizing constant that make the model a probability density function; in Bayesian statistics, when you do Markov Chain Monte Carlo sampling, or variational inference to obtain an approximation to the posterior distribution, it is always because it is "hard" to determine the normalizing constant. Here in canonical EF though, we have that the log-partition function gives the first two moments of the model, i.e. the expected value and the variance.
+
+	\subsection{Example Problems and Solutions - Chapter Two}
+
+		\subsubsection{2.3.7}
+
+		\subsubsection{MLE as a generalized MoM Estimator}
+
+		\subsubsection{Comparison of MLE and MoM Estimators on Finite-sample Gamma for MSE as our Risk Functional}
+
+			

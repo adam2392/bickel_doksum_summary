@@ -106,6 +106,8 @@ INPUT main.aux
 INPUT main.aux
 INPUT content/chapter_one.aux
 INPUT content/chapter_one.aux
+INPUT content/chapter_onev2.aux
+INPUT content/chapter_onev2.aux
 INPUT content/chapter_two.aux
 INPUT content/chapter_two.aux
 INPUT content/chapter_three.aux
@@ -221,6 +223,9 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+OUTPUT content/chapter_onev2.aux
+INPUT content/chapter_onev2.tex
+INPUT content/chapter_onev2.tex
 OUTPUT content/chapter_two.aux
 INPUT content/chapter_two.tex
 INPUT content/chapter_two.tex
@@ -241,6 +246,8 @@ INPUT main.bbl
 INPUT main.aux
 INPUT content/chapter_one.aux
 INPUT content/chapter_one.aux
+INPUT content/chapter_onev2.aux
+INPUT content/chapter_onev2.aux
 INPUT content/chapter_two.aux
 INPUT content/chapter_two.aux
 INPUT content/chapter_three.aux

@@ -23,6 +23,8 @@
  
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+
+\newtheorem{theorem}{Theorem}
  
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
@@ -83,10 +85,14 @@
 
 	Generally, P is arbitrary except for regularity conditions including, but not limited to:
 
-	1. finite second moments: $E_P[X^2] < \infty$
-	2. continuity of P
+	\begin{enumerate}
+		\item finite second moments: $E_P[X^2] < \infty$
+		\item continuity of P
+	\end{enumerate}
 
 \include{content/chapter_one}
+
+\include{content/chapter_onev2}
 
 \include{content/chapter_two}
 
@@ -97,9 +103,27 @@
 \include{content/chapter_five}
 
 \section{Inference in Multiparameters}
+	From chapters 2-5, we explored the behavior of estimates, tests and confidence regions just for simple regular one-dimensional parametric models. Now, we want to extend that understanding to d-dimensional models.
 
-	\subsection{Inference for Gaussian Linear Models (GLMs)}
+	\subsection{Inference for Gaussian Linear Models}
 
+		There are n $Y_i$ independent observations has a distribution that depends on known constants $z_{i1}, ..., z_{ip}$. The setup of any Gaussian linear model is in summation form and matrix form:
+
+		$$Y_i = \sum_{j=1}^p z_{ij} \beta_j + \epsilon_j = z_i^T\beta + \epsilon_i,\ i=1,...,n$$
+
+		with $\epsilon_i$ iid noise samples from $N(0, \sigma^2)$. $Y_i$ is called the response variable, and $z_{ij}$ are the design values, which form the design matrix. Given samples Y, and a matrix form of Z, and assuming that noise is distributed as such, then this is traditionally solved using least-squares (which can be proven to be optimal). 
+
+		\subsubsection{One-Sample Location}
+			If there is just a single mean:
+
+			$$Y_i = \beta_1 + \epsilon_i$$
+
+			then the solution $\beta_1 = E[Y]$.
+
+	\subsection{Canonical Form of the Gaussian Linear Model}
+
+
+	\subsection{Estimation for Gaussian Linear Models Parameters}
 
 \section{Acknowledgements}
   
