@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 DEC 2019 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 DEC 2019 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -726,12 +726,12 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  (./main.toc [1
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
-
-[2] (./main.lof)
+ [3] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
@@ -739,10 +739,10 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
- [3] [4]
+ [4] [5]
 \openout2 = `content/chapter_one.aux'.
 
- (./content/chapter_one.tex [5
+ (./content/chapter_one.tex [6
 
 ]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 59.
@@ -765,10 +765,10 @@ Underfull \hbox (badness 7486) in paragraph at lines 69--71
 . github . io / STT3850 / Lecture % 20Notes / Ch-[]3 _ Notes _ students .
  []
 
-[6]) [7]
+[7]) [8]
 \openout2 = `content/chapter_onev2.aux'.
 
- (./content/chapter_onev2.tex) [8
+ (./content/chapter_onev2.tex) [9
 
 
 ]
@@ -777,37 +777,37 @@ Underfull \hbox (badness 7486) in paragraph at lines 69--71
  (./content/chapter_two.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
- [9
+ [10
 
 
 ]
-[10] [11]) [12] [13]
+[11] [12]) [13] [14]
 \openout2 = `content/chapter_three.aux'.
 
- (./content/chapter_three.tex) [14
+ (./content/chapter_three.tex [15
 
 
-]
+]) [16]
 \openout2 = `content/chapter_four.aux'.
 
 
-(./content/chapter_four.tex) [15
+(./content/chapter_four.tex) [17
 
 
 ]
 \openout2 = `content/chapter_five.aux'.
 
- (./content/chapter_five.tex) [16
+ (./content/chapter_five.tex) [18
 
 
-] [17
+] [19
 
 ]
-[18] (./main.bbl
+[20] (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [19
+) [21
 
 ] (./main.aux (./content/chapter_one.aux) (./content/chapter_onev2.aux)
 (./content/chapter_two.aux) (./content/chapter_three.aux)
@@ -815,11 +815,11 @@ LaTeX Warning: Empty `thebibliography' environment on input line 3.
 Here is how much of TeX's memory you used:
  7292 strings out of 493089
  108425 string characters out of 6134842
- 313551 words of memory out of 5000000
+ 313552 words of memory out of 5000000
  10427 multiletter control sequences out of 15000+600000
  52442 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,45p,902b,257s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,45p,902b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive
 /2015/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2015/texmf-dis
 t/fonts/enc/dvips/cm-super/cm-super-t1.enc} </Users/adam2392/Library/texlive/20
@@ -838,10 +838,10 @@ s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
 w/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on main.pdf (19 pages, 200893 bytes).
+Output written on main.pdf (21 pages, 206182 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 135 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  25089 words of extra memory for PDF output out of 29859 (max. 10000000)
 

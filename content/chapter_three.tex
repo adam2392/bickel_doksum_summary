@@ -1,14 +1,70 @@
 \section{Chapter 3: Measure of Performance and "Notions" of Optimality in Estimation Procedures}
 	
-	In general, there is a random variable of interest $X ~ P \in \mathbb{P} = \{P_\theta : \theta \in \Theta \}$. Now, we want to estimate $\theta$ in some reasonable manner with functions $\hat{\theta}$ based on the vector of observations, X. Our goal is to make this estimator somehow close to the true $\theta$. 
+	In general, there is a random variable of interest $X ~ P \in \mathbb{P} = \{P_\theta : \theta \in \Theta \}$. Now, we want to estimate $\theta$ in some reasonable manner with functions $\hat{\theta}$ based on the vector of observations, X. Our goal is to make this estimator somehow close to the true $\theta$. There are different things we can consider from, ease of computation, consistency, robustness, or minimizing expected risk, etc.
+
+	In Chapter 2, we saw that plug-in estimates and method of moments are easy to compute. In Chapter 5, we will see that the MLE for canonical EF are consistent and we will also define consistency then.
 
 	\subsection{Bayes Optimality}
 
+		\textbf{Problem setup:}\\
+		We are given a parametric model family $\mathbb{F} = \{P_\theta : \theta \in \Theta \}$, with an action space, A, and a loss function $l(\theta, a)$. 
+
+		Then if we sample idd data $X ~ P_\theta$, and specify a decision procedure $\delta$ that can either be randomized, or not, then we define the risk function: $R(., \delta) : \Theta \rightarrow \mathbb{R}^+$
+
+		$$R(\theta, \delta) = E_\theta [ l(\theta, \delta(X)) ]$$
+
+		The risk is a measure of performance of your decision rule $\delta$ for this SPECIFIC model. At the very least, you do not want to consider inadmissable estimators (i.e. risk is worse for every value of $\theta$). In the Bayes context, we introduce a prior density $\pi$ for the parameter $\theta$. Then we can consider the following \textbf{Bayes risk}.
+
+		$$r(\pi, \delta) = E[R(\theta, \delta)] = E[l(\theta, \delta(X))]$$
+
+		\begin{definition}{Minimum Bayes Risk}
+			$R(\pi) = inf \{ r(\pi, \delta) : \delta \in D \}$ is the minimum Bayes risk of the problem. 
+		\end{definition}
+
+		Our goal is to identify Bayes rules, $\delta_\pi^*$, such that: $r(\pi, \delta_\pi^*) = R(\pi)$.
+
+		\subsubsection{Selection of Priors $\pi$}
+			
+			Improper priors
+
+			Uniform/constant priors 
+
+			Jeffrey's priors
+
+			Conjugate priors
+
+		\subsubsection{Bayes Estimation for Squared Error Loss}
+
+			We are interested in estimating $q(\theta)$.
+
+			In our setup, we now constrain our loss to be the quadratic loss function: $l(\theta, a) = (q(\theta) - a)^2$ using a nonrandomized decision rule, $\delta$. Consider $\pi(\theta)$ as our prior on the random vector $\theta$. We want now to find the function $\delta(X)$ that minimizes $r(\pi, \delta) = E[ q(\theta) - \delta(X) ]^2$.
+
+			This boils down to either the Bayes risk being $\infty$ for all $\delta$, or that we arrive at the Bayes rule, $\delta^*(X) = E[ q(\theta) | X ]$, which is just the \textbf{mean of the posterior distribution!}
+
+		\subsubsection{Bayes Estimation for General Loss Functions}
+
+			We are interested in estimating $q(\theta)$.
+
+			In our setup, we now consider general loss functions $l(\theta, a)$ using a nonrandomized decision rule, $\delta$. Consider $\pi(\theta)$ as our prior on the random vector $\theta$. We apply the same idea to formulate the posterior risk, which is:
+
+			$$r(a | x) = E [ l(\theta, a) | X=x ]$$
+
 	\subsection{Minimax Optimality}
 
+		Minimax optimality is considering the "maximum", or supremum of possible risks over the space of parameter values. It is used in optimizing for the worst-case outcome, but in many cases are shown to be inadmissable!
+
+
+
 	\subsection{Unbiased Optimality}
+
+		\subsubsection{Fisher Information (Matrix, or Value)}
+
+		\subsubsection{The Information Inequality Provides a Lower Bound on the Variance of Your Sufficient Statistic}
 
 	\subsection{Computation and Interpretability}
 
 	\subsection{Robustness}
 
+		\subsubsection{Gross Error Models}
+
+		\subsubsection{Sensitivity Curves}
