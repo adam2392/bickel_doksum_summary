@@ -3,10 +3,128 @@
   \label{sec:chapterone_v2}
   \subsection{Important Concepts and Definitions}
   	\begin{enumerate}
+      \item "Regular" Models
   		\item Sufficiency
   		\item Minimal Sufficiency
+      \item Admissability / Inadmissability
+      \item Parametric models
+      \item Order statistics
+      \item Empirical distribution function
+      \item Glivinko Cantelli Bound
+      \item Hoeffding Bound
+      \item Gauss-Markov Theorem
   	\end{enumerate}
 
+    \begin{definition}{A Statistic}
+    $T : X \times \mathbb{T}$ is a function that takes the sample space and maps to some possible values of statistics, usually Eucliean $\mathbb{R}^d$ space, where d is the dimensionality of the statistic.
+    \end{definition}
+
+    Well-known examples of statistics are the sample mean, and sample variance, but they can be any arbitrary mapping from sampled data.
+
+    \begin{definition}{The empirical distribution function}
+    $\hat{F}(X_1, ..., X_n; x) = \frac{1}{n} \sum_{i=1}^n \mathbbm{1}(X_i \le x)$ which basically tells us the probability that our sampled data is less then certain discrete values x. This essentially "bins" our data based on the indicator function.
+    \end{definition}
+
+    This statistic is nice beause it is easy to compute, and also we know asymptotically approaches the true $F$, as we take $n \rightarrow \infty$.
+
+    \begin{definition}{Regular models}
+    For any parametric model, it is considered a "regular parametric model", as long as either:
+
+    \begin{enumerate}
+      \item Continuous: All $P_\theta$ are continuous with corresponding densities $p(x, \theta)$.
+      \item Discrete: All $P_\theta$ are discrete with frequency functions $p(x, \theta)$ and there exists a countable set $\{x_1, x_2, ...\}$ that is independent of $\theta$ such that the normalizing property is achieved for all $\theta$ (i.e. $\sum_{i=1}^\infty p(x_i, \theta) = 1$)
+    \end{enumerate}
+
+    Pretty much this just is BD way of saying from now on, regular parametric models are either densities or frequency functions, but these are just the "joint probabilities" that we are used to seeing.
+    \end{definition}
+
+  \subsection{Decision Theory Framework}
+
+    The premise of this section is to define a rigorous framework to think about how to make \textbf{decisions using data} in an optimal sense. In the real world, we pretty much never have access to the true population parameters, and so we have to make \textbf{assumptions on the model that fits the population}, and generally we use parametric models. Then, the goal becomes fitting these parametric models with data and choosing the best possible estimators we can derive as functions of data. In this aspect, we then must define various objects:
+
+    \begin{definition}{The action space}
+    $A$ is an action space that consists of all actions, or decisions, or claims that we can make given a new "data, or component".
+
+    Examples: 
+    \begin{enumerate}
+      \item the real number line, denoting mean of male heights
+      \item the set of {0,1}, denoting if we see disease state or not
+      \item estimation, hypothesis testing, ranking and prediction are all results of an "action space"
+    \end{enumerate}
+    \end{definition}
+
+    \begin{definition}{The loss function}
+    $l: P \times A \rightarrow \mathbb{R}_+$ is a function that takes the true model, and compares the output action (e.g. estimate) and produces a non-negative real number.
+
+    Examples: 
+    \begin{enumerate}
+      \item quadratic loss (i.e. l2 loss)
+      \item l1 loss
+      \item cross-entropy loss
+      \item 0-1 loss
+      \item 0-a-b loss
+    \end{enumerate}
+    \end{definition}
+
+    \begin{definition}{The decision rule}
+    $\delta: X \rightarrow A$ is a function that acts on our samples to produce an action. (e.g. a sample estimate of a parameter). This is just a "generalization" of an "estimator" because it covers everything from estimation, hypothesis testing, ranking and prediction.
+    \end{definition}
+
+
+    \begin{definition}{The risk function}
+      $R: P \times X \rightarrow \mathbb{R}_+$ is the risk function that determins the expected value of our loss over the entire sample space, for a specific true model, P. 
+
+      $R(P, \delta(.)) = E_P [ l(P, \delta(X)) ]$, which measures the performance of the decision rule. Note why this is important. Loss of your decision rule is only for your specific samples, but risk is the expected loss over entire sample space, which is what we actually care about (think training vs testing vs validation data).
+    \end{definition}
+
+    Now, the risk function can generally be very complicated, but if we consider l2-loss, then our risk function is the well-known \textbf{mean-squared error} (i.e. MSE). This then allows the decomposition of risk into the well-known \textbf{Bias and Variance}! Consider, $\hat{\theta}$ as a decision rule estimator for a true parameter, $\theta$, which parametrizes a parametric model P.
+
+    \begin{align}
+      MSE(\hat{\theta}) = R(P, \hat{\theta}) = E_P [ (\hat{\theta}(X) - \theta(P))^2 ]\\
+      = E_P [ (\hat{\theta}(X) - E[\hat{\theta}] + E[\hat{\theta}] - \theta(P))^2 ] \\
+      = Bias(\hat{\theta})^2 + Var[\hat{\theta}]
+    \end{align}
+
+    The nice thing about MSE is that it's generally computable "easily", and it has some nice connections when we use Bayesian statistics. But generally if you think about it, optimizing for the average performance of an estimator might not be what you want. Consider in finance, perhaps you want to minimize the worst case scenario, then the loss would actually be the $l-\infty$ loss potentially, rather then l2 loss.
+
+  \subsection{Ways of Comparing Decision Procedures - Based on risk}
+
+    Now, that BD has defined the necessary components of a rigorous decision theory framework, one might ask: How can we compare possible estimates in a principled way? Part of the art in statistics is choosing the best "metric of comparison" for your problem. MSE is not the best risk functional for all problems, although it is a nice one to start with potentially.
+
+    \begin{enumerate}
+      \item Inadmissable versus admissable: If we can determine that a decision rule has better risk for all possible parameter values, then we would surely use this one. This is in general hard to verify though. Note that Wald shows that all admissible procedures are Bayes procedures! (so checking Bayes is sufficient for checking admissability)
+      \item Bayes optimality: Here, we are interested in obtaining decision procedures that improve upon a risk only for some subset of our parameter space that is governed by a prior.
+      \item Minmax optimality: Here, we optimize decision procedures based on the worst possible risk they could have.
+      \item Unbiased optimality: Here, we restrict our decision procedures to have unbiased property (i.e. expectated value is the true parameter), but note that there can be incredibly high variance as seen in the bias/variance decomposition of MSE
+      \item Randomized procedures: \textbf{not sure, how to explain this}
+    \end{enumerate}
+
+  \subsection{Sufficient Statistics, Rao-Blackwellization, and Neyman-Pearson Factorization}
+
+    In order to understand some of these theorems and concepts it would be useful to remind yourself of the following theorems/concepts:
+
+    \begin{enumerate}
+      \item Holder's inequality for Normed Linear Spaces, Inner product spaces, and Measureable spaces
+      \item convexity of a set and convexity of functions
+      \item continuity of a function for open versus closed sets
+      \item Cauchy sequences and their relation to compactness and their relation to continuity and boundedness
+    \end{enumerate}
+
+    \begin{definition}{Sufficiency}
+    T(X), $T: X \rightarrow \mathbb{T}$ is a sufficient statistic if the conditional distribution of sample space, X given T(X) = t is independent of parameter, $\theta$. In other words: $p(X | T(X) = t) \neq f(\theta)$, where $\theta$ parametrizes our parametric model P. 
+    \end{definition}
+
+    \begin{definition}{Minimal Sufficiency}
+    T(X), $T: X \rightarrow \mathbb{T}$ is a minimal sufficient statistic if.
+    \end{definition}
+
+    \begin{theorem}{Neyman-Pearson Factorization Theorem}
+    This is a way of proving that a statistic is sufficient because it is a necessary and sufficient condition in regular models.
+    \end{theorem}
+
+    \begin{theorem}{Rao-Blackwell Theorem}
+    This is a way of improving the MSE risk of a model given that you have a sufficient statistic. Note this does not guarantee you improve. Note that this is also only a result for MSE, not any other risk functional. However, it can be generalized to convex loss functionals.
+    \end{theorem}
 
   \subsection{Example Problems and Solutions - Chapter One}
 

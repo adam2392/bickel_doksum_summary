@@ -11,51 +11,54 @@
 \contentsline {subsection}{\numberline {2.7}Stein Estimation}{8}
 \contentsline {section}{\numberline {3}Chapter 1: An introduction to important concepts in statistical learning - Edition 2}{9}
 \contentsline {subsection}{\numberline {3.1}Important Concepts and Definitions}{9}
-\contentsline {subsection}{\numberline {3.2}Example Problems and Solutions - Chapter One}{9}
-\contentsline {subsubsection}{\numberline {3.2.1}Bayes estimator for Bernoulli Trials}{9}
-\contentsline {subsubsection}{\numberline {3.2.2}Minimal Sufficiency Derived from Neyman-Pearson Factorization Theorem}{9}
-\contentsline {subsubsection}{\numberline {3.2.3}The Order Statistics are Sufficient}{9}
-\contentsline {subsubsection}{\numberline {3.2.4}The Order Statistics are Equivalent to the Empirical CDF}{9}
-\contentsline {subsubsection}{\numberline {3.2.5}The Minimal Sufficient Statistic for a Laplace Model}{9}
-\contentsline {subsubsection}{\numberline {3.2.6}Explanation: Suffficiency is important in the Rao-Blackwell Theorem}{9}
-\contentsline {section}{\numberline {4}Chapter 2: Methods of Estimation}{10}
-\contentsline {subsection}{\numberline {4.1}Heuristics in Estimations}{10}
-\contentsline {subsubsection}{\numberline {4.1.1}Examples}{10}
-\contentsline {subsection}{\numberline {4.2}Plug-in and Extension Principle}{11}
-\contentsline {subsubsection}{\numberline {4.2.1}Plug-in Principle}{11}
-\contentsline {subsubsection}{\numberline {4.2.2}Extension Principle}{12}
-\contentsline {subsubsection}{\numberline {4.2.3}Examples of Plug-in and Extensions}{12}
-\contentsline {subsection}{\numberline {4.3}Minimum Contrast Estimates}{12}
-\contentsline {subsubsection}{\numberline {4.3.1}MLE as Minimum Contrast Estimates from the Kullback-Leibler Divergence}{12}
-\contentsline {subsubsection}{\numberline {4.3.2}MLE as Estimating Equations (i.e. Method of Moments)}{13}
-\contentsline {subsection}{\numberline {4.4}Maximum Likelihood in Exponential Families}{13}
-\contentsline {subsection}{\numberline {4.5}Making sense of Plug-in estimates, Minimum Contrast estimates and Maximum Likelihood estimate}{13}
-\contentsline {subsection}{\numberline {4.6}Example Problems and Solutions - Chapter Two}{14}
-\contentsline {subsubsection}{\numberline {4.6.1}2.3.7}{14}
-\contentsline {subsubsection}{\numberline {4.6.2}MLE as a generalized MoM Estimator}{14}
-\contentsline {subsubsection}{\numberline {4.6.3}Comparison of MLE and MoM Estimators on Finite-sample Gamma for MSE as our Risk Functional}{14}
-\contentsline {section}{\numberline {5}Chapter 3: Measure of Performance and "Notions" of Optimality in Estimation Procedures}{15}
-\contentsline {subsection}{\numberline {5.1}Bayes Optimality}{15}
-\contentsline {subsubsection}{\numberline {5.1.1}Selection of Priors $\pi $}{15}
-\contentsline {subsubsection}{\numberline {5.1.2}Bayes Estimation for Squared Error Loss}{15}
-\contentsline {subsubsection}{\numberline {5.1.3}Bayes Estimation for General Loss Functions}{15}
-\contentsline {subsection}{\numberline {5.2}Minimax Optimality}{16}
-\contentsline {subsection}{\numberline {5.3}Unbiased Optimality}{16}
-\contentsline {subsubsection}{\numberline {5.3.1}Fisher Information (Matrix, or Value)}{16}
-\contentsline {subsubsection}{\numberline {5.3.2}The Information Inequality Provides a Lower Bound on the Variance of Your Sufficient Statistic}{16}
-\contentsline {subsection}{\numberline {5.4}Computation and Interpretability}{16}
-\contentsline {subsection}{\numberline {5.5}Robustness}{16}
-\contentsline {subsubsection}{\numberline {5.5.1}Gross Error Models}{16}
-\contentsline {subsubsection}{\numberline {5.5.2}Sensitivity Curves}{16}
-\contentsline {section}{\numberline {6}Chapter 4: Hypothesis Testing and Confidence Regions}{17}
-\contentsline {section}{\numberline {7}Chapter 5: Asymptotic Approximations}{18}
-\contentsline {subsection}{\numberline {7.1}Examples:}{18}
-\contentsline {subsubsection}{\numberline {7.1.1}Example 1: Risk of the Median}{18}
-\contentsline {section}{\numberline {8}Inference in Multiparameters}{19}
-\contentsline {subsection}{\numberline {8.1}Inference for Gaussian Linear Models}{19}
-\contentsline {subsubsection}{\numberline {8.1.1}One-Sample Location}{19}
-\contentsline {subsection}{\numberline {8.2}Canonical Form of the Gaussian Linear Model}{19}
-\contentsline {subsection}{\numberline {8.3}Estimation for Gaussian Linear Models Parameters}{19}
-\contentsline {subsection}{\numberline {8.4}References}{19}
-\contentsline {section}{\numberline {9}Acknowledgements}{19}
-\contentsline {section}{\numberline {10}Supplementary Material}{20}
+\contentsline {subsection}{\numberline {3.2}Decision Theory Framework}{9}
+\contentsline {subsection}{\numberline {3.3}Ways of Comparing Decision Procedures - Based on risk}{10}
+\contentsline {subsection}{\numberline {3.4}Sufficient Statistics, Rao-Blackwellization, and Neyman-Pearson Factorization}{10}
+\contentsline {subsection}{\numberline {3.5}Example Problems and Solutions - Chapter One}{11}
+\contentsline {subsubsection}{\numberline {3.5.1}Bayes estimator for Bernoulli Trials}{11}
+\contentsline {subsubsection}{\numberline {3.5.2}Minimal Sufficiency Derived from Neyman-Pearson Factorization Theorem}{11}
+\contentsline {subsubsection}{\numberline {3.5.3}The Order Statistics are Sufficient}{11}
+\contentsline {subsubsection}{\numberline {3.5.4}The Order Statistics are Equivalent to the Empirical CDF}{11}
+\contentsline {subsubsection}{\numberline {3.5.5}The Minimal Sufficient Statistic for a Laplace Model}{11}
+\contentsline {subsubsection}{\numberline {3.5.6}Explanation: Suffficiency is important in the Rao-Blackwell Theorem}{11}
+\contentsline {section}{\numberline {4}Chapter 2: Methods of Estimation}{12}
+\contentsline {subsection}{\numberline {4.1}Heuristics in Estimations}{12}
+\contentsline {subsubsection}{\numberline {4.1.1}Examples}{12}
+\contentsline {subsection}{\numberline {4.2}Plug-in and Extension Principle}{13}
+\contentsline {subsubsection}{\numberline {4.2.1}Plug-in Principle}{13}
+\contentsline {subsubsection}{\numberline {4.2.2}Extension Principle}{14}
+\contentsline {subsubsection}{\numberline {4.2.3}Examples of Plug-in and Extensions}{14}
+\contentsline {subsection}{\numberline {4.3}Minimum Contrast Estimates}{14}
+\contentsline {subsubsection}{\numberline {4.3.1}MLE as Minimum Contrast Estimates from the Kullback-Leibler Divergence}{14}
+\contentsline {subsubsection}{\numberline {4.3.2}MLE as Estimating Equations (i.e. Method of Moments)}{15}
+\contentsline {subsection}{\numberline {4.4}Maximum Likelihood in Exponential Families}{15}
+\contentsline {subsection}{\numberline {4.5}Making sense of Plug-in estimates, Minimum Contrast estimates and Maximum Likelihood estimate}{15}
+\contentsline {subsection}{\numberline {4.6}Example Problems and Solutions - Chapter Two}{16}
+\contentsline {subsubsection}{\numberline {4.6.1}2.3.7}{16}
+\contentsline {subsubsection}{\numberline {4.6.2}MLE as a generalized MoM Estimator}{16}
+\contentsline {subsubsection}{\numberline {4.6.3}Comparison of MLE and MoM Estimators on Finite-sample Gamma for MSE as our Risk Functional}{16}
+\contentsline {section}{\numberline {5}Chapter 3: Measure of Performance and "Notions" of Optimality in Estimation Procedures}{17}
+\contentsline {subsection}{\numberline {5.1}Bayes Optimality}{17}
+\contentsline {subsubsection}{\numberline {5.1.1}Selection of Priors $\pi $}{17}
+\contentsline {subsubsection}{\numberline {5.1.2}Bayes Estimation for Squared Error Loss}{17}
+\contentsline {subsubsection}{\numberline {5.1.3}Bayes Estimation for General Loss Functions}{17}
+\contentsline {subsection}{\numberline {5.2}Minimax Optimality}{18}
+\contentsline {subsection}{\numberline {5.3}Unbiased Optimality}{18}
+\contentsline {subsubsection}{\numberline {5.3.1}Fisher Information (Matrix, or Value)}{18}
+\contentsline {subsubsection}{\numberline {5.3.2}The Information Inequality Provides a Lower Bound on the Variance of Your Sufficient Statistic}{18}
+\contentsline {subsection}{\numberline {5.4}Computation and Interpretability}{18}
+\contentsline {subsection}{\numberline {5.5}Robustness}{18}
+\contentsline {subsubsection}{\numberline {5.5.1}Gross Error Models}{18}
+\contentsline {subsubsection}{\numberline {5.5.2}Sensitivity Curves}{18}
+\contentsline {section}{\numberline {6}Chapter 4: Hypothesis Testing and Confidence Regions}{19}
+\contentsline {section}{\numberline {7}Chapter 5: Asymptotic Approximations}{20}
+\contentsline {subsection}{\numberline {7.1}Examples:}{20}
+\contentsline {subsubsection}{\numberline {7.1.1}Example 1: Risk of the Median}{20}
+\contentsline {section}{\numberline {8}Inference in Multiparameters}{21}
+\contentsline {subsection}{\numberline {8.1}Inference for Gaussian Linear Models}{21}
+\contentsline {subsubsection}{\numberline {8.1.1}One-Sample Location}{21}
+\contentsline {subsection}{\numberline {8.2}Canonical Form of the Gaussian Linear Model}{21}
+\contentsline {subsection}{\numberline {8.3}Estimation for Gaussian Linear Models Parameters}{21}
+\contentsline {subsection}{\numberline {8.4}References}{21}
+\contentsline {section}{\numberline {9}Acknowledgements}{21}
+\contentsline {section}{\numberline {10}Supplementary Material}{22}
