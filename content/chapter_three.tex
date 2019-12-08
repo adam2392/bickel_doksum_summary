@@ -49,22 +49,58 @@
 
 			$$r(a | x) = E [ l(\theta, a) | X=x ]$$
 
+			In BD proposition 3.2.1, though we know that if there exists an estimator, $\delta(x)$ that minimizes this function, then it is a Bayes rule, so we know that Bayes rule is indeed optimal in the decision theoretic framework for this specific risk functional.
+
 	\subsection{Minimax Optimality}
 
 		Minimax optimality is considering the "maximum", or supremum of possible risks over the space of parameter values. It is used in optimizing for the worst-case outcome, but in many cases are shown to be inadmissable!
 
-
-
 	\subsection{Unbiased Optimality}
+
+		So far, we have setup the rigorous framework of decision theory, and see that the function we are generally interested in optimizing is the risk. "Unbiasedness" sounds like an awesome property, but it simply implies that Bias is 0. However, in terms of risk, variance could be very big! Unbiased optimality is still important though because we can determine bounds on the variance through the \textbf{Information Inequality}, which will then allow us to check for the Uniform Minimum Variance Unbiased Estimate (UMVUE).
+
+		Note that there are major issues with unbiased optimality:
+
+		\begin{enumerate}
+			\item existence: many times unbiased estimates do not exist
+			\item Bayes estimates are biased: Bayes estimates are "optimal" in a sense, and they are biased... So bias can't be that bad.
+			\item minimax estimates are also often biased
+			\item not equivariant: unbiased estimators are not equivariant (i.e. not maintained under 1-1 transformations) as opposed to Maximum Likelihood Estimators
+		\end{enumerate}
+
+		There are also major pros though with unbiasedness!
+
+		\begin{enumerate}
+			\item In asymptotic theory, it would be nice generally to show unbiasedness because then, usually we can show variance going to 0, or a constant factor as n goes to $\infty$
+		\end{enumerate}
 
 		\subsubsection{Fisher Information (Matrix, or Value)}
 
-		\subsubsection{The Information Inequality Provides a Lower Bound on the Variance of Your Sufficient Statistic}
+			For rigor, BD states two regularity assumptions to  arrive at the lower bound for the variance of a statistic (i.e. the Information Inequality).
 
-	\subsection{Computation and Interpretability}
+			\begin{enumerate}
+				\item $\{x: p(x, \theta) > 0 \}$ is independent of $\theta$
+				\item $\frac{\partial}{\partial \theta log(p(x, \theta))} < \infty$ and it exists
+				\item If T is any statistic with $E_\theta[|T|] < \infty$ for all $\theta$, then the integration and differentiation of $\theta$ can be interchanged
+			\end{enumerate}
 
-	\subsection{Robustness}
+			\begin{theorem}{Information Inequality:}
+				T(X) is any statistic with a bounded variance, and $\psi(\theta)$ is the expected value of T.
 
-		\subsubsection{Gross Error Models}
+				Then, we have: 
+				$\psi(\theta)$ is differentiable and that $Var_\theta [ T(X) ] \ge \frac{[\psi'(\theta)]^2}{I(\theta)}$
+			\end{theorem}
 
-		\subsubsection{Sensitivity Curves}
+			When the estimator T is an unbiased estimate of $\theta$, then the numerator becomes 1, and so the variance of the estimator is solely bounded by this function, $I(\theta)$, which is known as the famed \textbf{Fisher Information (Matrix)}.
+
+			\begin{definition}{Fisher Information:}
+				$I(\theta) = E_\theta [ (\frac{\partial}{\partial \theta} log (p(X, \theta)))^2 ]$
+			\end{definition}
+
+	% \subsection{Robustness}
+
+	% 	https://github.com/alyakin314/lqrt
+
+	% 	\subsubsection{Gross Error Models}
+
+	% 	\subsubsection{Sensitivity Curves}

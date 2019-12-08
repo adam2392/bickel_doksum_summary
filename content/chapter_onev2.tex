@@ -10,9 +10,9 @@
       \item Parametric models
       \item Order statistics
       \item Empirical distribution function
-      \item Glivinko Cantelli Bound
-      \item Hoeffding Bound
-      \item Gauss-Markov Theorem
+      % \item Glivinko Cantelli Bound
+      % \item Hoeffding Bound
+      % \item Gauss-Markov Theorem
   	\end{enumerate}
 
     \begin{definition}{A Statistic}
@@ -28,14 +28,12 @@
     This statistic is nice beause it is easy to compute, and also we know asymptotically approaches the true $F$, as we take $n \rightarrow \infty$.
 
     \begin{definition}{Regular models}
-    For any parametric model, it is considered a "regular parametric model", as long as either:
-
-    \begin{enumerate}
-      \item Continuous: All $P_\theta$ are continuous with corresponding densities $p(x, \theta)$.
-      \item Discrete: All $P_\theta$ are discrete with frequency functions $p(x, \theta)$ and there exists a countable set $\{x_1, x_2, ...\}$ that is independent of $\theta$ such that the normalizing property is achieved for all $\theta$ (i.e. $\sum_{i=1}^\infty p(x_i, \theta) = 1$)
-    \end{enumerate}
-
-    Pretty much this just is BD way of saying from now on, regular parametric models are either densities or frequency functions, but these are just the "joint probabilities" that we are used to seeing.
+      For any parametric model, it is considered a "regular parametric model", as long as either:
+      \begin{enumerate}
+        \item Continuous: All $P_\theta$ are continuous with corresponding densities $p(x, \theta)$.
+        \item Discrete: All $P_\theta$ are discrete with frequency functions $p(x, \theta)$ and there exists a countable set $\{x_1, x_2, ...\}$ that is independent of $\theta$ such that the normalizing property is achieved for all $\theta$ (i.e. $\sum_{i=1}^\infty p(x_i, \theta) = 1$)
+      \end{enumerate}
+      Pretty much this just is BD way of saying from now on, regular parametric models are either densities or frequency functions, but these are just the "joint probabilities" that we are used to seeing.
     \end{definition}
 
   \subsection{Decision Theory Framework}
@@ -119,7 +117,7 @@
     \end{definition}
 
     \begin{theorem}{Neyman-Pearson Factorization Theorem}
-    This is a way of proving that a statistic is sufficient because it is a necessary and sufficient condition in regular models.
+    This is a way of proving that a statistic is sufficient because it is a necessary and sufficient condition in regular models. This theorem is useful for either one checking if a statistic is sufficient, or just constructing a sufficient statistic by factorizing the conditional distribution into a function of X and a function of $\theta$ and the sufficient statistic.
     \end{theorem}
 
     \begin{theorem}{Rao-Blackwell Theorem}
@@ -129,13 +127,184 @@
   \subsection{Example Problems and Solutions - Chapter One}
 
 		\subsubsection{Bayes estimator for Bernoulli Trials}
+      In this example, we consider the Bayes estimator for Bernoulli trials. Here, we will investigate the risk functional, MSE as a function of n, $\theta$, c and k (i.e. sample size, true parameter, and prior distribution parameters).
+
+      \textbf{Problem:} $X_1, ..., X_n ~ i.i.d. Bernoulli(\theta)$, with a prior distribution on $\theta ~ Beta(c, ck)$. We will consider the Bayes estimator $\hat{\theta}$, which is the mean of the posterior distribution. Consider MSE of $\hat{\theta}$ in terms of $(n, \theta, c, k)$.
+
+      Let $\Delta = |\theta - 1/(k+1)|$. Given $(n, \theta,k$, find optimal c -- $c^* = argmin_c MSE(n, \theta,c,k)$, and discuss $c^*$ with respect to $\Delta$.
+
+      \textbf{Solution:}\\
+
+      Let us review a few basic facts about Bayes estimation. The Beta distribution is a conjugate prior for the Bernoulli distribution. So, we know that the form of the posterior distribution is another Beta distribution. In order to estimate a Bayes estimator, we need the likelihood function and the form of the prior and the log-partition function (i.e. normalizing constant). Bayes rule is:
+
+      $$P(\theta | X) = \frac{P(\theta) P(X | \theta)}{\int P(X, \theta) d\theta}$$
+
+      The likelihood function is:
+
+      \begin{align}
+        p(x_1, \ldots, x_n\, |\, \theta) = \prod_{i=1}^n P(X = x_i\, |\, \theta) \\
+          = \prod_{i=1}^n \theta^{x_i} (1-\theta)^{1-x_i} \\
+          = \theta^z (1-\theta)^{n-z} \\
+          => z = \sum_{i=1}^n \mathbbm{1}(x_i = 1)
+      \end{align}
+
+      where "z" is the number of successes and n-z the number of failures. The prior function is:
+
+      $$p(\theta) = \frac{1}{\mathrm{B}(\alpha, \beta)} \theta^{\alpha - 1} (1 - \theta)^{\beta - 1}, \quad \text{for $\theta \in [0,1]$}$$
+
+      where $B(\alpha, \beta)$ is the Beta function. 
+
+      Now, the posterior may be written out analytically as:
+
+      \begin{align*}
+        P(\theta | X) = \frac{P(\theta) P(X | \theta)}{C} \\
+        = \theta^z (1-\theta)^{n-z} \theta^{c - 1} (1 - \theta)^{ck - 1} \frac{1}{C} \\
+        = \theta^{z+c-1} (1-\theta)^{n-z+ck-1} \frac{1}{C} \quad \text{(also is in form of Beta)} \\
+        = Beta(c+k, ck+n-k)\\
+      \end{align*}
+
+      Now, let us explicitly state our \textbf{estimator}: $\hat{\theta} = E_\theta[ P(\theta | X) ] = E[ Beta(c+k, ck+n-k) ] = \frac{c+z}{c + ck + n}$. The variance of the estimator is:
+
+      Note that $E[z] = E[\sum_{i=1}^n x_i] = n\theta$ and $E[z^2] = n\theta + \theta^2n^2 - n\theta^2$ because z is binomially distributed.
+
+      \begin{align*}
+          Var(\hat{\theta}) = E[\hat{\theta}^2] - E[\theta]^2 \\
+            = E[(\frac{c+z}{c + ck + n})^2] - E[\frac{c+z}{c + ck + n}]^2 \\
+            = E[(\frac{(c+z)^2}{(c + ck + n)^2})] - E[\frac{c+z}{c + ck + n}]^2 \\
+            = \frac{E[c^2+2cz+z^2] - E[(c+z)]^2}{(c + ck + n)^2} \quad \text{denom is constant} \\
+            = \frac{c^2 + 2cn\theta + n\theta + n^2\theta^2 - n\theta^2 - (c+n\theta)^2}{(c + ck + n)^2} \\
+            = \frac{n\theta - n\theta^2}{(c + ck + n)^2} \\
+      \end{align*}
+
+      Here, we analyze the bias of this estimator.
+
+      \begin{align*}
+          Bias(\hat{\theta}) = (E[\hat{\theta} - \theta]) \\
+            = (\frac{c+n\theta}{c + ck + n} - \theta) \\
+            => Bias^2 = (\frac{c+n\theta}{c + ck + n} - \theta)^2
+      \end{align*}
+
+      Now, we write down our \textbf{MSE($\hat{\theta}$)} as a function of the Bias and the Variance:
+
+      \begin{align*}
+          MSE(\hat{\theta}) = E[(\hat{\theta} - \theta)^2] \\
+            = Var(\hat{\theta}) + Bias(\hat{\theta})^2 \\
+            = \frac{n\theta - n\theta^2}{(c + ck + n)^2} + E[\hat{\theta} - \theta]^2 \\
+            = \frac{n\theta - n\theta^2}{(c + ck + n)^2} + (\frac{c+n\theta}{c + ck + n} - \theta)^2 \\
+      \end{align*}
+
+      $c^*$ given $(n, \theta, k)$ the minimum of this above equation, that can be computed from gradient descent, or just directly. Note that $c^*$ is only  function of $(k, \theta)$. The c term (along with k) controls the prior distribution Beta of our wanted parameter, $\theta$ and where it lies. If we defined $\Delta = |\theta - 1/(k+1)|$. We have the following analysis:
+
+      \begin{align*}
+        MSE(c | n, k, \theta) = E[(\hat{\theta} - \theta)^2] \\
+          = Var + (\frac{c+n\theta}{c + ck + n} - \theta)^2 \\
+          = \frac{n\theta - n\theta^2}{(c + ck + n)^2} + (\frac{c+n\theta}{c + ck + n} - \theta)^2 \\
+          \approx \mathcal{O}(\frac{1}{c^2}) + \mathcal{O}(\frac{c}{c}) \\
+          => \text{more formally} \lim_{c->\infty} MSE = 0 + (\theta - \frac{1}{k+1})
+      \end{align*}
+
+      Assuming fixed parameters $(n, \theta, k)$: We see that as we increase c, the variance simply decreases at a quadratic rate wrt c, so it approaches 0 in the limit of c going to $\infty$. However, as we increase c, then the bias approaches a constant value linearly. It approaches the difference between $\theta$ and $\frac{1}{k+1}$, the $\Delta$ term in this regard. This $\Delta$ term is the biasedness of our Bayes estimator when Variance goes to 0. 
 
 		\subsubsection{Minimal Sufficiency Derived from Neyman-Pearson Factorization Theorem}
+    
+      \textbf{Problem:}\\
+        Let $f(x, \theta)$, be a family of densities. If T is a minimally sufficient statistic for $\theta$, then a ratio of the form $\frac{f_x(\theta)}{f_y(\theta)}$ is independent of $\theta$ if and only if T(x) = T(y).
+
+        Reminder that a sufficient statistic is minimal sufficient if it can be expressed as a function of any other sufficient statistic. S(X) is minimal sufficient if and only if:
+
+        \begin{enumerate}
+          \item S(X) is sufficient and
+          \item if T(X) is sufficient, then $\exists f$ such that S(X) = f(T(X))
+        \end{enumerate}
+
+      \textbf{Solution discussion:}\\
+
+        Let $x, y \in X$ be our samples from a sample space.
+
+        (=>)\\
+          If T is sufficient for $\theta$, then by the factorization theorem, the joint distribution $P(X, \theta)$ can be written as $g(T(X), \theta)h(X)$. Here, we will show that the two conditions hold.
+
+          (=>) We have the likelihood ratio of the form $\frac{L_x(\theta)}{L_y(\theta)}$, which is independent of $\theta$. So that means 
+
+          $$f_x(\theta) = f_{\theta}(x) = h(x) g(\theta, T(x))$$ and
+          $$f_y(\theta) = f_{\theta}(y) = h(y) g(\theta, T(y))$$
+
+          Then we have the ratio as:
+
+          $$\frac{f_x(\theta)}{f_y(\theta)} = \frac{h(x) g(\theta, T(x))}{h(y) g(\theta, T(y))} \quad \text{indep. of $\theta$ by assumption}$$
+
+          So, therefore $g(\theta, T(y)) = g(\theta, T(x))$, so T(x) = T(y) $\forall x,y \in X$.
+
+          (<=) If we have that T(x) = T(y), then we can write the likelihood ratio as:
+
+          $$\frac{L_x(\theta)}{L_y(\theta)} = \frac{h(x) g(\theta, T(x))}{h(y) g(\theta, T(y))}$$
+
+          which would be independent of $\theta$ when T(x) = T(y).
+
+        (<=)\\
+          Now, we are given the two conditions, and asked to show that S is a minimal sufficient statistic. So we have to 1) prove that T is sufficient and 2) prove that given another sufficient statistic S, that $\exists r$, such that S(x) = r(T(x)).
+
+          First, let us prove that T is sufficient. If we have that by assumption:
+
+          $$\frac{f_y(\theta)}{f_x(\theta)} = C(x,y)$$
+
+          which gives us:
+
+          \begin{align*}
+            f_y(\theta) = f_x(\theta)C(x,y)
+            = h(x,y)g(\theta,x)
+          \end{align*}
+
+          Second, let us show that T is minimal. We consider now another statistic S. By factorization theorem:
+
+          $$f(x,\theta) = \tilde{g}_{\theta}(S(x))\tilde{h}(x)$$
+
+          Now, we can take any x, y such that S(x) = S(y), then we can get from equivalence assumption in the theorem:
+
+          \begin{align*}
+            f(x, \theta) = \tilde{g}_{\theta}(S(x))\tilde{h}(x) \\
+              = \tilde{g}_{\theta}(S(y))\tilde{h}(y)\frac{\tilde{h}(x)}{\tilde{h}(y)} \\
+              = f(y, \theta) C(x,y)
+          \end{align*}
+
+          Since, T(x) = T(y) by the assumption of the theorem, then S(x) = S(y) implies T(x) = T(y) for any suffficient statistic S, and any x,y. Here, C(x,y) is some constant function that is independent of $\theta$.
 
 		\subsubsection{The Order Statistics are Sufficient}
 
+      \textbf{Problem:}\\
+        $X = X_1, ..., X_n ~ i.i.d. F$ continuous distribution with density f, which is unknown. Treat f as a parameter and show that the O.S. are sufficient for f.
+
+      \textbf{Proof:}\\
+        The order statistics are ordered samples: $X_{(1)} \le X_{(2)} \le ... \le X_{(n)}$. 
+
+        Note, that the O.S. are equivalent to the eCDF of the data X. The joint distribution of the O.S. is just the possible ways of ordering the data, so it is
+
+        $$f(y_1, ..., y_n) = n! f(y_1) X ... X f(y_n) = n! \prod_{i=1}^n f(y_i)$$
+
+        for $y_1 \le ... \le y_n$, where $y_i$ is a r.v.
+
+        So the joint distribution of $X_1, ..., X_n$, given $X_{(1)}, ..., X_{(n)}$ does not depend on the density f because $P(X_1 = x_1, ..., X_n=x_n | X_{(1)}=y_1, ..., X_{(n)}=y_n) = \frac{1}{n!}$ since all orderings are possible, because the samples are independently drawn, so this specific ordering has probability $\frac{1}{n!}$.
+
+        Since, the parameter is f, this conditional probability of data and the order statistic is independent of f, then the order statistics are sufficient for f.
+
 		\subsubsection{The Order Statistics are Equivalent to the Empirical CDF}
+      \textbf{Problem:}\\
+       $X_1, ..., X_n ~ i.i.d. F$, then the order statistics are ordered samples: $X_{(1)} \le X_{(2)} \le ... \le X_{(n)}$. The eCDF is $\hat{F}(X_1, ..., X_n)(x) = \frac{1}{n} \sum_{i=1}^n \mathbbm{1}(X_i \le x)$.
+
+      \textbf{Proof:}\\
+        We have that the eCDF can be written as:
+
+        \begin{align*}
+          \hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^n \mathbbm{1} (X_i < x) \\
+          = \frac{1}{n} \sum_{i=1}^n \mathbbm{1} (X_{(i)} < x) \\
+        \end{align*}
+
+        So this function when written with the order statistics is just a stair-function with jumps of height 1/n at points $X_{(i)}$ (the order statistics). It is a monotonically increasing function, right continuous and takes on values $\in [0,1]$.
+
+        Therefore, the O.S. and eCDF are equivalent.
 
 		\subsubsection{The Minimal Sufficient Statistic for a Laplace Model}
+      TODO:
 
 		\subsubsection{Explanation: Suffficiency is important in the Rao-Blackwell Theorem}
+      TODO:

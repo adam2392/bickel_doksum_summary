@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 DEC 2019 11:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 DEC 2019 22:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -726,12 +726,12 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  (./main.toc [1
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2])
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [3] (./main.lof)
+
+[2] [3] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
@@ -771,57 +771,68 @@ Underfull \hbox (badness 7486) in paragraph at lines 69--71
  (./content/chapter_onev2.tex [9
 
 
-] [10]) [11]
+] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+[13] [14]) [15]
 \openout2 = `content/chapter_two.aux'.
 
  (./content/chapter_two.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
-[12
+ [16
 
 
-] [13] [14]) [15] [16]
+] [17] [18]) [19]
 \openout2 = `content/chapter_three.aux'.
 
- (./content/chapter_three.tex [17
+
+(./content/chapter_three.tex [20
 
 
-]) [18]
+]) [21]
 \openout2 = `content/chapter_four.aux'.
 
-
-(./content/chapter_four.tex) [19
+ (./content/chapter_four.tex) [22
 
 
 ]
 \openout2 = `content/chapter_five.aux'.
 
- (./content/chapter_five.tex) [20
+
+(./content/chapter_five.tex) [23
 
 
 ]
-Overfull \hbox (43.9775pt too wide) in paragraph at lines 130--133
+Overfull \hbox (43.9775pt too wide) in paragraph at lines 135--138
 \T1/ptm/m/n/10 (-20) https://www.stat.berkeley.edu/ aditya/resources/LectureSIX
 .pdf https://www.stat.berkeley.edu/ aditya/resources/LectureSEVEN.pdf
  []
 
-[21
+[24
 
-] [22] (./main.bbl
+] [25] (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [23
+) [26
 
 ] (./main.aux (./content/chapter_one.aux) (./content/chapter_onev2.aux)
 (./content/chapter_two.aux) (./content/chapter_three.aux)
 (./content/chapter_four.aux) (./content/chapter_five.aux)) ) 
 Here is how much of TeX's memory you used:
- 7304 strings out of 493089
- 108527 string characters out of 6134842
- 313552 words of memory out of 5000000
- 10427 multiletter control sequences out of 15000+600000
- 52962 words of font info for 151 fonts, out of 8000000 for 9000
+ 7309 strings out of 493089
+ 108587 string characters out of 6134842
+ 317556 words of memory out of 5000000
+ 10429 multiletter control sequences out of 15000+600000
+ 54736 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,45p,902b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive
@@ -830,22 +841,23 @@ t/fonts/enc/dvips/cm-super/cm-super-t1.enc} </Users/adam2392/Library/texlive/20
 15/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
-w/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on main.pdf (23 pages, 215346 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/ti
+mes/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (26 pages, 251969 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
+ 160 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 25089 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 25601 words of extra memory for PDF output out of 29859 (max. 10000000)
 
