@@ -25,12 +25,12 @@
 \contentsline {subsection}{\numberline {4.1}Heuristics in Estimations}{16}
 \contentsline {subsubsection}{\numberline {4.1.1}Examples}{16}
 \contentsline {subsection}{\numberline {4.2}Plug-in and Extension Principle}{17}
-\contentsline {subsubsection}{\numberline {4.2.1}Plug-in Principle}{17}
+\contentsline {subsubsection}{\numberline {4.2.1}Plug-in Principle}{18}
 \contentsline {subsubsection}{\numberline {4.2.2}Extension Principle}{18}
 \contentsline {subsubsection}{\numberline {4.2.3}Examples of Plug-in and Extensions}{18}
 \contentsline {subsection}{\numberline {4.3}Minimum Contrast Estimates}{18}
 \contentsline {subsubsection}{\numberline {4.3.1}MLE as Minimum Contrast Estimates from the Kullback-Leibler Divergence}{18}
-\contentsline {subsubsection}{\numberline {4.3.2}MLE as Estimating Equations (i.e. Method of Moments)}{19}
+\contentsline {subsubsection}{\numberline {4.3.2}MLE as Estimating Equations}{19}
 \contentsline {subsection}{\numberline {4.4}Maximum Likelihood in Exponential Families}{19}
 \contentsline {subsection}{\numberline {4.5}Making sense of Plug-in estimates, Minimum Contrast estimates and Maximum Likelihood estimate}{19}
 \contentsline {section}{\numberline {5}Chapter 3: Measure of Performance and "Notions" of Optimality in Estimation Procedures}{20}
